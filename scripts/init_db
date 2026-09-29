@@ -1,1 +1,55 @@
+/*
+===============================================================================
+Database Initialization
+Project: SQL Data Warehouse & Analytics
+Database: DataWarehouse_Project
+Purpose: Create the data warehouse database and its Bronze, Silver, and Gold
+         schemas.
+===============================================================================
 
+Script Purpose:
+    This script creates a new database named 'DataWarehouse_Project' after
+    checking if it already exists. If the database exists, it is dropped and
+    recreated.
+
+    Additionally, the script sets up three schemas within the database:
+    'Bronze_Layer', 'Silver_Layer', and 'Gold_Layer'.
+*/
+
+USE master;
+GO
+
+-- Drop and recreate the 'DataWarehouse_Project' database
+IF EXISTS (
+    SELECT 1
+    FROM sys.databases
+    WHERE name = 'DataWarehouse_Project'
+)
+BEGIN
+    ALTER DATABASE DataWarehouse_Project
+    SET SINGLE_USER
+    WITH ROLLBACK IMMEDIATE;
+
+    DROP DATABASE DataWarehouse_Project;
+END;
+GO
+
+-- Create the 'DataWarehouse_Project' database
+CREATE DATABASE DataWarehouse_Project;
+GO
+
+-- Switch to the data warehouse database
+USE DataWarehouse_Project;
+GO
+
+-- Create Bronze Layer
+CREATE SCHEMA Bronze_Layer;
+GO
+
+-- Create Silver Layer
+CREATE SCHEMA Silver_Layer;
+GO
+
+-- Create Gold Layer
+CREATE SCHEMA Gold_Layer;
+GO
