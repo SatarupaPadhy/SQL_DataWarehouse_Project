@@ -8,7 +8,7 @@ Welcome to my **SQL Data Warehouse & Analytics Project** 👋
 
 This project focuses on building a modern data warehouse using **SQL Server**, starting from raw business data and transforming it into a structured and reliable data model for analysis.
 
-The main goal is to understand and demonstrate the complete data workflow — from **data ingestion and cleaning to data modeling and analytical reporting**.
+The main goal is to understand and demonstrate the complete data workflow from **data ingestion and cleaning to data modeling and analytical reporting**.
 
 ---
 
